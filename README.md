@@ -1,4 +1,4 @@
-![Screenshot 2025-02-03 115014](https://github.com/user-attachments/assets/bb28f543-f92f-4ef6-8a37-15d3bc3e5057)<h1>Excel-like Web Application</h1>
+<h1>Excel-like Web Application</h1>
 <p>This is a web-based application that mimics the functionality of a spreadsheet. It allows users to perform basic spreadsheet operations such as entering data, applying formulas, formatting cells, and saving/loading sheets.</p>
 <h2 id="features">✨ Features</h2>
 
