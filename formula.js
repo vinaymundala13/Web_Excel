@@ -92,27 +92,35 @@ formulaInput.addEventListener("keydown", function (e) {
 
 // Evaluates formulas including SUM, AVERAGE, MAX, MIN, COUNT
 function evaluateFormula(formula) {
-    let functionMatch = formula.match(/^([A-Z]+)\((.*?)\)$/); // Check for function format
+    // Check if the formula is a function (e.g., SUM, AVERAGE, etc.)
+    let functionMatch = formula.match(/^([A-Z]+)\((.*?)\)$/);
 
     if (functionMatch) {
         let functionName = functionMatch[1]; // SUM, AVERAGE, etc.
         let range = functionMatch[2]; // A1:A4
-        
-        let values = getRangeValues(range); // Extract values from the range
 
-        switch (functionName) {
+        // Extract values from the range
+        let values = getRangeValues(range);
+
+        // Handle empty ranges
+        if (values.length === 0) {
+            return "Error: No valid numbers in range";
+        }
+
+        // Perform the calculation based on the function name
+        switch (functionName.toUpperCase()) {
             case "SUM":
                 return values.reduce((acc, val) => acc + val, 0);
             case "AVERAGE":
-                return values.length > 0 ? values.reduce((acc, val) => acc + val, 0) / values.length : 0;
+                return values.reduce((acc, val) => acc + val, 0) / values.length;
             case "MAX":
-                return values.length > 0 ? Math.max(...values) : "Error";
+                return Math.max(...values);
             case "MIN":
-                return values.length > 0 ? Math.min(...values) : "Error";
+                return Math.min(...values);
             case "COUNT":
                 return values.length;
             default:
-                return "Error";
+                return "Error: Unknown function";
         }
     }
 
@@ -126,7 +134,11 @@ function evaluateFormula(formula) {
         }
     }
     
-    return eval(formula); // Evaluate math expressions
+     try {
+        return eval(formula);
+    } catch (e) {
+        return "Error: Invalid formula";
+    }
 }
 
 // Get values from a cell range (e.g., A1:A4)
