@@ -98,5 +98,6 @@ https://github.com/user-attachments/assets/df8968f7-db95-43e0-a969-19f251c060d8
 
 ![Screenshot 2025-02-03 115014](https://github.com/user-attachments/assets/7c5e9bbb-9202-4f5e-a702-13ba25b6d451)
 
-
+<h3>Live Link</h3>
+<a href='https://web-excel-hr4hrluio-mundala-vinays-projects.vercel.app/'>click here for live link</a>
 
