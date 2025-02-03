@@ -1,9 +1,4 @@
-const hamburgerMenu = document.getElementById('hamburger-menu');
-const hamburgerItems = document.getElementById('hamburger-items');
 
-hamburgerMenu.addEventListener('click', () => {
-    hamburgerItems.classList.toggle('show');
-});
 // Function to apply Uppercase to the content of a cell
 function applyUpper() {
     const address = addressInput.value; // e.g., "A1"
